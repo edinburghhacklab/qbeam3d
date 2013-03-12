@@ -1,0 +1,201 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>ScannerControlWidget</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>ScannerControlWidget</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>193</width>
+            <height>227</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Steuerung</string>
+    </property>
+    <vbox>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>0</number>
+        </property>
+        <widget class="QGroupBox">
+            <property name="name">
+                <cstring>m_laserControlBox</cstring>
+            </property>
+            <property name="title">
+                <string>Laser</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>m_layerLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Einraststufe</string>
+                    </property>
+                </widget>
+                <widget class="QSpinBox" row="0" column="1">
+                    <property name="name">
+                        <cstring>m_layerSpinBox</cstring>
+                    </property>
+                    <property name="wrapping">
+                        <bool>true</bool>
+                    </property>
+                    <property name="maxValue">
+                        <number>7</number>
+                    </property>
+                    <property name="minValue">
+                        <number>1</number>
+                    </property>
+                    <property name="value">
+                        <number>2</number>
+                    </property>
+                </widget>
+                <widget class="QPushButton" row="3" column="0">
+                    <property name="name">
+                        <cstring>m_laserOnOffButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>An/Aus</string>
+                    </property>
+                    <property name="toggleButton">
+                        <bool>true</bool>
+                    </property>
+                    <property name="on">
+                        <bool>false</bool>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="1" column="0">
+                    <property name="name">
+                        <cstring>m_laserPositionLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Laser Position</string>
+                    </property>
+                </widget>
+                <widget class="QSpinBox" row="1" column="1">
+                    <property name="name">
+                        <cstring>m_laserPositionSpinBox</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="maxValue">
+                        <number>360</number>
+                    </property>
+                </widget>
+                <widget class="QPushButton" row="2" column="1">
+                    <property name="name">
+                        <cstring>m_repositionButton</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>true</bool>
+                    </property>
+                    <property name="text">
+                        <string>Ausrichten</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton" row="3" column="1">
+                    <property name="name">
+                        <cstring>m_laserResetButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Zurücksetzen</string>
+                    </property>
+                    <property name="accel">
+                        <string></string>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+        <widget class="QGroupBox">
+            <property name="name">
+                <cstring>m_tableControlBox</cstring>
+            </property>
+            <property name="title">
+                <string>Drehteller</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QSpinBox" row="0" column="1">
+                    <property name="name">
+                        <cstring>m_tablePositionSpinBox</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="wrapping">
+                        <bool>true</bool>
+                    </property>
+                    <property name="buttonSymbols">
+                        <enum>UpDownArrows</enum>
+                    </property>
+                    <property name="maxValue">
+                        <number>720</number>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>m_tablePositionLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Position</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton" row="1" column="0">
+                    <property name="name">
+                        <cstring>m_tableOnOffButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>An/Aus</string>
+                    </property>
+                    <property name="toggleButton">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QPushButton" row="1" column="1">
+                    <property name="name">
+                        <cstring>m_tableResetButton</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>true</bool>
+                    </property>
+                    <property name="text">
+                        <string>Zurücksetzen</string>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+    </vbox>
+</widget>
+<connections>
+    <connection>
+        <sender>m_tableOnOffButton</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>m_tablePositionSpinBox</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>m_laserOnOffButton</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>m_laserPositionSpinBox</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>m_laserOnOffButton</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>m_repositionButton</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+</connections>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

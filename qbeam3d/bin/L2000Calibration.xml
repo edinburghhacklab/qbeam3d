@@ -1,0 +1,87 @@
+<!DOCTYPE L2000>
+<L2000>
+ <PreCalibration>
+  <LaserPosition alpha="0.314159" h0="37" distance="142.5" />
+  <StepperPosition use="true" level="1" angle="137.00" />
+  <StepperPosition use="true" level="2" angle="115.00" />
+  <StepperPosition use="true" level="3" angle="93.50" />
+  <StepperPosition use="true" level="4" angle="76.00" />
+  <StepperPosition use="true" level="5" angle="62.00" />
+  <StepperPosition use="true" level="6" angle="51.00" />
+  <StepperPosition use="true" level="7" angle="41.00" />
+ </PreCalibration>
+ <MainCalibration>
+  <CCD1 x4="-6.32292e-06" x5="1.76041e-07" x0="-1" x1="0.00269046" x2="0.000170994" x3="-0.00242047" />
+  <CCD2 x4="-6.55707e-06" x5="6.31082e-07" x0="-1" x1="0.00304991" x2="0.000257919" x3="-0.00255349" />
+  <Reading ccd1="584" ccd2="563" level="2" angle="115" />
+  <Reading ccd1="584" ccd2="564" level="2" angle="116" />
+  <Reading ccd1="584" ccd2="564" level="2" angle="117" />
+  <Reading ccd1="584" ccd2="564" level="2" angle="118" />
+  <Reading ccd1="584" ccd2="564" level="2" angle="119" />
+  <Reading ccd1="584" ccd2="564" level="2" angle="120" />
+  <Reading ccd1="584" ccd2="565" level="2" angle="121" />
+  <Reading ccd1="584" ccd2="564" level="2" angle="122" />
+  <Reading ccd1="584" ccd2="564" level="2" angle="123" />
+  <Reading ccd1="584" ccd2="564" level="2" angle="124" />
+  <Reading ccd1="584" ccd2="565" level="2" angle="125" />
+  <Reading ccd1="584" ccd2="565" level="2" angle="126" />
+  <Reading ccd1="584" ccd2="564" level="2" angle="127" />
+  <Reading ccd1="584" ccd2="564" level="2" angle="128" />
+  <Reading ccd1="584" ccd2="565" level="2" angle="129" />
+  <Reading ccd1="584" ccd2="565" level="2" angle="130" />
+  <Reading ccd1="584" ccd2="565" level="2" angle="131" />
+  <Reading ccd1="584" ccd2="565" level="2" angle="132" />
+  <Reading ccd1="584" ccd2="566" level="2" angle="133" />
+  <Reading ccd1="584" ccd2="566" level="2" angle="134" />
+  <Reading ccd1="584" ccd2="565" level="2" angle="135" />
+  <Reading ccd1="584" ccd2="566" level="2" angle="136" />
+  <Reading ccd1="579" ccd2="562" level="2" angle="137" />
+  <Reading ccd1="0" ccd2="0" level="2" angle="138" />
+  <Reading ccd1="0" ccd2="0" level="2" angle="139" />
+  <Reading ccd1="0" ccd2="0" level="2" angle="140" />
+  <Reading ccd1="0" ccd2="476" level="2" angle="141" />
+  <Reading ccd1="0" ccd2="0" level="2" angle="142" />
+  <Reading ccd1="0" ccd2="0" level="2" angle="143" />
+  <Reading ccd1="431" ccd2="0" level="2" angle="144" />
+  <Reading ccd1="411" ccd2="391" level="2" angle="145" />
+  <Reading ccd1="411" ccd2="391" level="2" angle="146" />
+  <Reading ccd1="411" ccd2="391" level="2" angle="147" />
+  <Reading ccd1="411" ccd2="392" level="2" angle="148" />
+  <Reading ccd1="411" ccd2="391" level="2" angle="149" />
+  <Reading ccd1="411" ccd2="391" level="2" angle="150" />
+  <Reading ccd1="411" ccd2="392" level="2" angle="151" />
+  <Reading ccd1="412" ccd2="392" level="2" angle="152" />
+  <Reading ccd1="411" ccd2="392" level="2" angle="153" />
+  <Reading ccd1="410" ccd2="391" level="2" angle="154" />
+  <Reading ccd1="0" ccd2="0" level="2" angle="155" />
+  <Reading ccd1="0" ccd2="0" level="2" angle="156" />
+  <Reading ccd1="289" ccd2="267" level="2" angle="157" />
+  <Reading ccd1="289" ccd2="267" level="2" angle="158" />
+  <Reading ccd1="288" ccd2="267" level="2" angle="159" />
+  <Reading ccd1="288" ccd2="267" level="2" angle="160" />
+  <Reading ccd1="288" ccd2="267" level="2" angle="161" />
+  <Reading ccd1="288" ccd2="267" level="2" angle="162" />
+  <Reading ccd1="288" ccd2="267" level="2" angle="163" />
+  <Reading ccd1="288" ccd2="266" level="2" angle="164" />
+  <Reading ccd1="288" ccd2="267" level="2" angle="165" />
+  <Reading ccd1="288" ccd2="266" level="2" angle="166" />
+  <Reading ccd1="0" ccd2="0" level="2" angle="167" />
+  <Reading ccd1="0" ccd2="0" level="2" angle="168" />
+  <Reading ccd1="0" ccd2="83" level="2" angle="169" />
+  <Reading ccd1="0" ccd2="83" level="2" angle="170" />
+  <Reading ccd1="0" ccd2="0" level="2" angle="171" />
+  <Reading ccd1="0" ccd2="0" level="2" angle="172" />
+  <Reading ccd1="0" ccd2="0" level="2" angle="173" />
+  <Reading ccd1="0" ccd2="0" level="2" angle="174" />
+  <Reading ccd1="0" ccd2="0" level="2" angle="175" />
+  <Reading ccd1="0" ccd2="0" level="2" angle="176" />
+  <Reading ccd1="0" ccd2="0" level="2" angle="177" />
+  <Reading ccd1="0" ccd2="0" level="2" angle="178" />
+  <Reading ccd1="0" ccd2="0" level="2" angle="179" />
+  <Reading ccd1="0" ccd2="0" level="2" angle="180" />
+  <Reading ccd1="0" ccd2="0" level="2" angle="181" />
+  <Reading ccd1="0" ccd2="0" level="2" angle="182" />
+  <Reading ccd1="0" ccd2="0" level="2" angle="183" />
+  <Reading ccd1="0" ccd2="0" level="2" angle="184" />
+ </MainCalibration>
+</L2000>

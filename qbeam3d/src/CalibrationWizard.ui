@@ -1,0 +1,1317 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>CalibrationWizard</class>
+<widget class="QWizard">
+    <property name="name">
+        <cstring>CalibrationWizard</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>2</y>
+            <width>740</width>
+            <height>600</height>
+        </rect>
+    </property>
+    <property name="maximumSize">
+        <size>
+            <width>800</width>
+            <height>600</height>
+        </size>
+    </property>
+    <property name="caption">
+        <string>Kalibrierungs-Druide</string>
+    </property>
+    <widget class="QWidget">
+        <property name="name">
+            <cstring>m_introductionPage</cstring>
+        </property>
+        <attribute name="title">
+            <string>Einleitung</string>
+        </attribute>
+        <hbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>m_introductionText</cstring>
+                </property>
+                <property name="sizePolicy">
+                    <sizepolicy>
+                        <hsizetype>5</hsizetype>
+                        <vsizetype>5</vsizetype>
+                        <horstretch>1</horstretch>
+                        <verstretch>0</verstretch>
+                    </sizepolicy>
+                </property>
+                <property name="frameShape">
+                    <enum>GroupBoxPanel</enum>
+                </property>
+                <property name="frameShadow">
+                    <enum>Raised</enum>
+                </property>
+                <property name="lineWidth">
+                    <number>1</number>
+                </property>
+                <property name="margin">
+                    <number>6</number>
+                </property>
+                <property name="midLineWidth">
+                    <number>1</number>
+                </property>
+                <property name="text">
+                    <string>Die vollständige Kalibrierung besteht aus &lt;i&gt;zwei&lt;/i&gt; Teilschritten.
+
+&lt;p&gt;Der &lt;i&gt;erste Schritt&lt;/i&gt;, die Erfassung der Startpunkte für den Scanvorgang, sowie die Position des Lasers im Weltkoordinatensystem ist etwas zeitaufwendiger, muss dafür allerdings eher selten durchgeführt werden.&lt;/p&gt;
+
+&lt;p&gt;Der &lt;i&gt;zweite Schritt&lt;/i&gt;, die Bestimmung der Abbildungen vom Kamera-Koordinatensystem ins Weltkoordinatensystem sollte nach jeder Bewegung des Gerätes durchgeführt werden. Sie ist allerdings schnell erledigt.&lt;/p&gt;</string>
+                </property>
+                <property name="textFormat">
+                    <enum>RichText</enum>
+                </property>
+                <property name="scaledContents">
+                    <bool>true</bool>
+                </property>
+                <property name="alignment">
+                    <set>WordBreak|AlignTop</set>
+                </property>
+                <property name="indent">
+                    <number>-1</number>
+                </property>
+            </widget>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout6</cstring>
+                </property>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>m_precalibCheckBox</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>5</hsizetype>
+                                <vsizetype>0</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="text">
+                            <string>Positionsdaten erfassen</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>m_calibrateOriginText</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>5</hsizetype>
+                                <vsizetype>5</vsizetype>
+                                <horstretch>1</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="text">
+                            <string>Es konnten keine Positiondaten geladen werden. Daher muss der &lt;i&gt;erste Schritt&lt;/i&gt; der auf jeden Fall durchgeführt werden..</string>
+                        </property>
+                        <property name="textFormat">
+                            <enum>RichText</enum>
+                        </property>
+                        <property name="alignment">
+                            <set>WordBreak|AlignVCenter</set>
+                        </property>
+                    </widget>
+                </vbox>
+            </widget>
+        </hbox>
+    </widget>
+    <widget class="QWidget">
+        <property name="name">
+            <cstring>m_preCalibrationPage</cstring>
+        </property>
+        <attribute name="title">
+            <string>Positionsdaten erfassen</string>
+        </attribute>
+        <hbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QWidgetStack">
+                <property name="name">
+                    <cstring>m_originTextStack</cstring>
+                </property>
+                <property name="sizePolicy">
+                    <sizepolicy>
+                        <hsizetype>5</hsizetype>
+                        <vsizetype>5</vsizetype>
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                    </sizepolicy>
+                </property>
+                <property name="frameShadow">
+                    <enum>Plain</enum>
+                </property>
+                <widget class="QWidget">
+                    <property name="name">
+                        <cstring>m_page1_1</cstring>
+                    </property>
+                    <attribute name="id">
+                        <number>0</number>
+                    </attribute>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <property name="spacing">
+                            <number>0</number>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>m_originStepText1</cstring>
+                            </property>
+                            <property name="frameShape">
+                                <enum>NoFrame</enum>
+                            </property>
+                            <property name="text">
+                                <string>&lt;p&gt;1. Entfernen Sie die Gummimatte und passen Sie das Kalibrierungsobjekt mit der niedrigen Seite zum Laser hin auf dem Teller ein.&lt;/p&gt;
+&lt;p&gt;2. Rasten Sie die Lasereinheit auf der ersten Stufe ein.
+&lt;/p&gt;
+Drücken Sie dann auf den "Erfassen" Knopf.</string>
+                            </property>
+                            <property name="textFormat">
+                                <enum>RichText</enum>
+                            </property>
+                            <property name="alignment">
+                                <set>WordBreak|AlignTop|AlignLeft</set>
+                            </property>
+                        </widget>
+                    </vbox>
+                </widget>
+                <widget class="QWidget">
+                    <property name="name">
+                        <cstring>m_page2_1</cstring>
+                    </property>
+                    <attribute name="id">
+                        <number>1</number>
+                    </attribute>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <property name="spacing">
+                            <number>0</number>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>m_originStepText2</cstring>
+                            </property>
+                            <property name="frameShape">
+                                <enum>NoFrame</enum>
+                            </property>
+                            <property name="text">
+                                <string>&lt;p&gt;Bewegen Sie nun den Laser-Punkt nach oben bzw. unten, bis er sich genau am Fuß der ersten senkrechten des Kalibrierungsobjektes befindet.&lt;/p&gt;</string>
+                            </property>
+                            <property name="textFormat">
+                                <enum>RichText</enum>
+                            </property>
+                            <property name="alignment">
+                                <set>WordBreak|AlignTop|AlignLeft</set>
+                            </property>
+                        </widget>
+                    </vbox>
+                </widget>
+                <widget class="QWidget">
+                    <property name="name">
+                        <cstring>m_page3_1</cstring>
+                    </property>
+                    <attribute name="id">
+                        <number>2</number>
+                    </attribute>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <property name="spacing">
+                            <number>0</number>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>m_originStepText3</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>5</hsizetype>
+                                    <vsizetype>5</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="frameShape">
+                                <enum>NoFrame</enum>
+                            </property>
+                            <property name="text">
+                                <string>&lt;p&gt;Wenn Sie die Ecke nicht ganz exakt treffen können, schätzen sie den fehlenden Teil mit den Nachkommastellen, um das Ergebnis zu verbessern.&lt;/p&gt;
+
+Drücken Sie den "Ok" Knopf wenn sie den Wert eingestellt haben.</string>
+                            </property>
+                            <property name="textFormat">
+                                <enum>RichText</enum>
+                            </property>
+                            <property name="alignment">
+                                <set>WordBreak|AlignTop|AlignLeft</set>
+                            </property>
+                        </widget>
+                    </vbox>
+                </widget>
+                <widget class="QWidget">
+                    <property name="name">
+                        <cstring>m_page4_1</cstring>
+                    </property>
+                    <attribute name="id">
+                        <number>3</number>
+                    </attribute>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>m_originStepText4</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>5</hsizetype>
+                                    <vsizetype>5</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="frameShape">
+                                <enum>NoFrame</enum>
+                            </property>
+                            <property name="text">
+                                <string>&lt;p&gt;&lt;b&gt;Fertig.&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;Um das Ergebnis zu verbessern können, können Sie einzelne Werte aus der Berechnungsgrundlage mit der Check-Box entfernen. Besonders die Werte ab Stufe 5 neigen zu größerer Ungenauigkeit.
+&lt;/p&gt;
+
+Drücken Sie auf den Knopf "Next" um diesen Abschnitt abzuschließen und weiter zur Kamerakalibrierung zu kommen.</string>
+                            </property>
+                            <property name="textFormat">
+                                <enum>RichText</enum>
+                            </property>
+                            <property name="alignment">
+                                <set>WordBreak|AlignTop|AlignLeft</set>
+                            </property>
+                        </widget>
+                    </vbox>
+                </widget>
+            </widget>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout15</cstring>
+                </property>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLayoutWidget">
+                        <property name="name">
+                            <cstring>layout10</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLCDNumber">
+                                <property name="name">
+                                    <cstring>m_laserPositionLCD</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>3</hsizetype>
+                                        <vsizetype>1</vsizetype>
+                                        <horstretch>10</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="frameShape">
+                                    <enum>Box</enum>
+                                </property>
+                                <property name="frameShadow">
+                                    <enum>Plain</enum>
+                                </property>
+                                <property name="smallDecimalPoint">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="segmentStyle">
+                                    <enum>Filled</enum>
+                                </property>
+                            </widget>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                    <cstring>buttonLayout</cstring>
+                                </property>
+                                <grid>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <property name="margin">
+                                        <number>2</number>
+                                    </property>
+                                    <property name="spacing">
+                                        <number>1</number>
+                                    </property>
+                                    <widget class="QToolButton" row="1" column="1">
+                                        <property name="name">
+                                            <cstring>m_down</cstring>
+                                        </property>
+                                        <property name="minimumSize">
+                                            <size>
+                                                <width>20</width>
+                                                <height>0</height>
+                                            </size>
+                                        </property>
+                                        <property name="maximumSize">
+                                            <size>
+                                                <width>20</width>
+                                                <height>20</height>
+                                            </size>
+                                        </property>
+                                        <property name="text">
+                                            <string>-1</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QToolButton" row="1" column="2">
+                                        <property name="name">
+                                            <cstring>m_fineDown</cstring>
+                                        </property>
+                                        <property name="minimumSize">
+                                            <size>
+                                                <width>20</width>
+                                                <height>0</height>
+                                            </size>
+                                        </property>
+                                        <property name="maximumSize">
+                                            <size>
+                                                <width>20</width>
+                                                <height>20</height>
+                                            </size>
+                                        </property>
+                                        <property name="text">
+                                            <string>-</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QToolButton" row="0" column="1">
+                                        <property name="name">
+                                            <cstring>m_up</cstring>
+                                        </property>
+                                        <property name="minimumSize">
+                                            <size>
+                                                <width>20</width>
+                                                <height>20</height>
+                                            </size>
+                                        </property>
+                                        <property name="maximumSize">
+                                            <size>
+                                                <width>20</width>
+                                                <height>20</height>
+                                            </size>
+                                        </property>
+                                        <property name="text">
+                                            <string>+1</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QToolButton" row="0" column="2">
+                                        <property name="name">
+                                            <cstring>m_fineUp</cstring>
+                                        </property>
+                                        <property name="minimumSize">
+                                            <size>
+                                                <width>20</width>
+                                                <height>0</height>
+                                            </size>
+                                        </property>
+                                        <property name="maximumSize">
+                                            <size>
+                                                <width>20</width>
+                                                <height>20</height>
+                                            </size>
+                                        </property>
+                                        <property name="text">
+                                            <string>+</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QToolButton" row="1" column="0">
+                                        <property name="name">
+                                            <cstring>m_5down</cstring>
+                                        </property>
+                                        <property name="minimumSize">
+                                            <size>
+                                                <width>20</width>
+                                                <height>0</height>
+                                            </size>
+                                        </property>
+                                        <property name="maximumSize">
+                                            <size>
+                                                <width>20</width>
+                                                <height>20</height>
+                                            </size>
+                                        </property>
+                                        <property name="text">
+                                            <string>-5</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QToolButton" row="0" column="0">
+                                        <property name="name">
+                                            <cstring>m_5up</cstring>
+                                        </property>
+                                        <property name="minimumSize">
+                                            <size>
+                                                <width>20</width>
+                                                <height>20</height>
+                                            </size>
+                                        </property>
+                                        <property name="maximumSize">
+                                            <size>
+                                                <width>20</width>
+                                                <height>20</height>
+                                            </size>
+                                        </property>
+                                        <property name="text">
+                                            <string>+5</string>
+                                        </property>
+                                    </widget>
+                                </grid>
+                            </widget>
+                        </hbox>
+                    </widget>
+                    <widget class="QLayoutWidget">
+                        <property name="name">
+                            <cstring>layout14</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QButtonGroup">
+                                <property name="name">
+                                    <cstring>m_layerGroup</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>5</hsizetype>
+                                        <vsizetype>5</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="frameShape">
+                                    <enum>Box</enum>
+                                </property>
+                                <property name="frameShadow">
+                                    <enum>Sunken</enum>
+                                </property>
+                                <property name="lineWidth">
+                                    <number>1</number>
+                                </property>
+                                <property name="margin">
+                                    <number>2</number>
+                                </property>
+                                <property name="midLineWidth">
+                                    <number>0</number>
+                                </property>
+                                <property name="title">
+                                    <string></string>
+                                </property>
+                                <property name="alignment">
+                                    <set>AlignVCenter</set>
+                                </property>
+                                <property name="flat">
+                                    <bool>false</bool>
+                                </property>
+                                <grid>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QCheckBox" row="0" column="2">
+                                        <property name="name">
+                                            <cstring>m_use7CheckBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string></string>
+                                        </property>
+                                        <property name="checked">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                    <widget class="QRadioButton" row="5" column="0">
+                                        <property name="name">
+                                            <cstring>m_radio2</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>2nd</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox" row="2" column="2">
+                                        <property name="name">
+                                            <cstring>m_use5CheckBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string></string>
+                                        </property>
+                                        <property name="checked">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                    <widget class="QRadioButton" row="6" column="0">
+                                        <property name="name">
+                                            <cstring>m_radio1</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>1st</string>
+                                        </property>
+                                        <property name="checked">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                    <widget class="QRadioButton" row="4" column="0">
+                                        <property name="name">
+                                            <cstring>m_radio3</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>3rd</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QRadioButton" row="1" column="0">
+                                        <property name="name">
+                                            <cstring>m_radio6</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>6th</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox" row="3" column="2">
+                                        <property name="name">
+                                            <cstring>m_use4CheckBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string></string>
+                                        </property>
+                                        <property name="checked">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                    <widget class="QRadioButton" row="2" column="0">
+                                        <property name="name">
+                                            <cstring>m_radio5</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>5th</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QRadioButton" row="3" column="0">
+                                        <property name="name">
+                                            <cstring>m_radio4</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>4th</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QRadioButton" row="0" column="0">
+                                        <property name="name">
+                                            <cstring>m_radio7</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>7th</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox" row="5" column="2">
+                                        <property name="name">
+                                            <cstring>m_use2CheckBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string></string>
+                                        </property>
+                                        <property name="checked">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox" row="4" column="2">
+                                        <property name="name">
+                                            <cstring>m_use3CheckBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string></string>
+                                        </property>
+                                        <property name="checked">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox" row="1" column="2">
+                                        <property name="name">
+                                            <cstring>m_use6CheckBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string></string>
+                                        </property>
+                                        <property name="checked">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox" row="6" column="2">
+                                        <property name="name">
+                                            <cstring>m_use1CheckBox</cstring>
+                                        </property>
+                                        <property name="enabled">
+                                            <bool>true</bool>
+                                        </property>
+                                        <property name="text">
+                                            <string></string>
+                                        </property>
+                                        <property name="checked">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel" row="6" column="1">
+                                        <property name="name">
+                                            <cstring>m_lcd1</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>000.00</string>
+                                        </property>
+                                        <property name="textFormat">
+                                            <enum>PlainText</enum>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel" row="5" column="1">
+                                        <property name="name">
+                                            <cstring>m_lcd2</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>000.00</string>
+                                        </property>
+                                        <property name="textFormat">
+                                            <enum>PlainText</enum>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel" row="4" column="1">
+                                        <property name="name">
+                                            <cstring>m_lcd3</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>000.00</string>
+                                        </property>
+                                        <property name="textFormat">
+                                            <enum>PlainText</enum>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel" row="3" column="1">
+                                        <property name="name">
+                                            <cstring>m_lcd4</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>000.00</string>
+                                        </property>
+                                        <property name="textFormat">
+                                            <enum>PlainText</enum>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel" row="2" column="1">
+                                        <property name="name">
+                                            <cstring>m_lcd5</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>000.00</string>
+                                        </property>
+                                        <property name="textFormat">
+                                            <enum>PlainText</enum>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel" row="1" column="1">
+                                        <property name="name">
+                                            <cstring>m_lcd6</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>000.00</string>
+                                        </property>
+                                        <property name="textFormat">
+                                            <enum>PlainText</enum>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel" row="0" column="1">
+                                        <property name="name">
+                                            <cstring>m_lcd7</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>000.00</string>
+                                        </property>
+                                        <property name="textFormat">
+                                            <enum>PlainText</enum>
+                                        </property>
+                                    </widget>
+                                </grid>
+                            </widget>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                    <cstring>layout13</cstring>
+                                </property>
+                                <vbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QToolButton">
+                                        <property name="name">
+                                            <cstring>m_trackLayerButton</cstring>
+                                        </property>
+                                        <property name="sizePolicy">
+                                            <sizepolicy>
+                                                <hsizetype>1</hsizetype>
+                                                <vsizetype>5</vsizetype>
+                                                <horstretch>0</horstretch>
+                                                <verstretch>0</verstretch>
+                                            </sizepolicy>
+                                        </property>
+                                        <property name="text">
+                                            <string>&amp;Erfassen</string>
+                                        </property>
+                                        <property name="accel">
+                                            <string>Alt+E</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QToolButton">
+                                        <property name="name">
+                                            <cstring>m_previousLayerButton</cstring>
+                                        </property>
+                                        <property name="sizePolicy">
+                                            <sizepolicy>
+                                                <hsizetype>1</hsizetype>
+                                                <vsizetype>5</vsizetype>
+                                                <horstretch>0</horstretch>
+                                                <verstretch>0</verstretch>
+                                            </sizepolicy>
+                                        </property>
+                                        <property name="text">
+                                            <string>&amp;Vorheriger</string>
+                                        </property>
+                                        <property name="accel">
+                                            <string>Alt+V</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QGroupBox">
+                                        <property name="name">
+                                            <cstring>groupBox1</cstring>
+                                        </property>
+                                        <property name="title">
+                                            <string>Abstand D</string>
+                                        </property>
+                                        <vbox>
+                                            <property name="name">
+                                                <cstring>unnamed</cstring>
+                                            </property>
+                                            <widget class="QLabel">
+                                                <property name="name">
+                                                    <cstring>m_distanceLabel</cstring>
+                                                </property>
+                                                <property name="text">
+                                                    <string>125.00 mm</string>
+                                                </property>
+                                            </widget>
+                                            <widget class="QLabel">
+                                                <property name="name">
+                                                    <cstring>m_distanceIntLabel</cstring>
+                                                </property>
+                                                <property name="text">
+                                                    <string>+- 3.5 mm</string>
+                                                </property>
+                                            </widget>
+                                        </vbox>
+                                    </widget>
+                                    <widget class="QGroupBox">
+                                        <property name="name">
+                                            <cstring>groupBox1_2</cstring>
+                                        </property>
+                                        <property name="title">
+                                            <string>Winkel Alpha</string>
+                                        </property>
+                                        <vbox>
+                                            <property name="name">
+                                                <cstring>unnamed</cstring>
+                                            </property>
+                                            <widget class="QLabel">
+                                                <property name="name">
+                                                    <cstring>m_angleLabel</cstring>
+                                                </property>
+                                                <property name="text">
+                                                    <string>18.007°</string>
+                                                </property>
+                                            </widget>
+                                            <widget class="QLabel">
+                                                <property name="name">
+                                                    <cstring>m_angleIntLabel</cstring>
+                                                </property>
+                                                <property name="text">
+                                                    <string>+- 0.5°</string>
+                                                </property>
+                                            </widget>
+                                        </vbox>
+                                    </widget>
+                                </vbox>
+                            </widget>
+                        </hbox>
+                    </widget>
+                    <spacer>
+                        <property name="name">
+                            <cstring>spacer3</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Vertical</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>20</width>
+                                <height>71</height>
+                            </size>
+                        </property>
+                    </spacer>
+                </vbox>
+            </widget>
+        </hbox>
+    </widget>
+    <widget class="QWidget">
+        <property name="name">
+            <cstring>m_ccdCalibrationPage</cstring>
+        </property>
+        <attribute name="title">
+            <string>Kamera Kalibrierung</string>
+        </attribute>
+        <vbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="Plane2DView">
+                <property name="name">
+                    <cstring>m_calibrationPlotter</cstring>
+                </property>
+                <property name="sizePolicy">
+                    <sizepolicy>
+                        <hsizetype>7</hsizetype>
+                        <vsizetype>7</vsizetype>
+                        <horstretch>3</horstretch>
+                        <verstretch>0</verstretch>
+                    </sizepolicy>
+                </property>
+            </widget>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout11</cstring>
+                </property>
+                <hbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QWidgetStack">
+                        <property name="name">
+                            <cstring>m_ccdStack</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>5</hsizetype>
+                                <vsizetype>5</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <widget class="QWidget">
+                            <property name="name">
+                                <cstring>m_ccdText1</cstring>
+                            </property>
+                            <attribute name="id">
+                                <number>0</number>
+                            </attribute>
+                            <vbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>m_ccdText1</cstring>
+                                    </property>
+                                    <property name="sizePolicy">
+                                        <sizepolicy>
+                                            <hsizetype>5</hsizetype>
+                                            <vsizetype>5</vsizetype>
+                                            <horstretch>0</horstretch>
+                                            <verstretch>0</verstretch>
+                                        </sizepolicy>
+                                    </property>
+                                    <property name="text">
+                                        <string>&lt;p&gt;Entfernen Sie die schwarze Gummimatte und positionieren Sie das Kalibrierungsobjekt mit der niedrigen Seite zum Laser hin auf dem Drehteller falls noch nicht geschehen.&lt;/p&gt;
+
+&lt;p&gt;Rasten Sie dann die Lasereinheit auf der &lt;b&gt;zweiten Stufe&lt;/b&gt; ein.&lt;/p&gt;
+
+&lt;p&gt;Drücken Sie den Knopf  "Kalibrieren" um den Vorgang zu starten.&lt;/p&gt;</string>
+                                    </property>
+                                    <property name="textFormat">
+                                        <enum>RichText</enum>
+                                    </property>
+                                </widget>
+                            </vbox>
+                        </widget>
+                        <widget class="QWidget">
+                            <property name="name">
+                                <cstring>m_ccdText2</cstring>
+                            </property>
+                            <attribute name="id">
+                                <number>1</number>
+                            </attribute>
+                            <vbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>m_ccdText2</cstring>
+                                    </property>
+                                    <property name="sizePolicy">
+                                        <sizepolicy>
+                                            <hsizetype>5</hsizetype>
+                                            <vsizetype>5</vsizetype>
+                                            <horstretch>1</horstretch>
+                                            <verstretch>0</verstretch>
+                                        </sizepolicy>
+                                    </property>
+                                    <property name="text">
+                                        <string>&lt;p&gt;&lt;b&gt;Fertig!&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Rechts können Sie die erwartete Genauigkeit ablesen, mit der Sie jetzt scannen können.
+Der Wert für die mittlere Abweichung sollte unter einem Millimeter liegen. Liegt einer der beiden Werte darüber und/oder sind auf den Senkrechten oben im Bild von einer Kamera weniger Punkte, ändern Sie das Umgebungslicht und wiederholen Sie den Vorgang.&lt;/p&gt;
+
+&lt;p&gt;Wenn Sie mit den Werten zufrieden sind, schließen Sie den Vorgang mit Druck auf den Knopf  "Finish" ab.&lt;/p&gt;</string>
+                                    </property>
+                                    <property name="textFormat">
+                                        <enum>RichText</enum>
+                                    </property>
+                                </widget>
+                            </vbox>
+                        </widget>
+                    </widget>
+                    <widget class="QLayoutWidget">
+                        <property name="name">
+                            <cstring>layout10</cstring>
+                        </property>
+                        <vbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                    <cstring>layout9</cstring>
+                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QPushButton">
+                                        <property name="name">
+                                            <cstring>m_calibrateButton</cstring>
+                                        </property>
+                                        <property name="font">
+                                            <font>
+                                            </font>
+                                        </property>
+                                        <property name="text">
+                                            <string>Kalibrieren</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QPushButton">
+                                        <property name="name">
+                                            <cstring>m_optimizeButton</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Optimieren</string>
+                                        </property>
+                                        <property name="toolTip" stdset="0">
+                                            <string>Führt eine Maximum-Likelihood Schätzung durch, um die Scanner-Maße zu optimieren</string>
+                                        </property>
+                                    </widget>
+                                </hbox>
+                            </widget>
+                            <widget class="QGroupBox">
+                                <property name="name">
+                                    <cstring>m_rightGroupBox</cstring>
+                                </property>
+                                <property name="enabled">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="title">
+                                    <string>CCD rechts</string>
+                                </property>
+                                <vbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>m_averageLabelRight</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Mittlere Abweichung</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLineEdit">
+                                        <property name="name">
+                                            <cstring>m_rightAverage</cstring>
+                                        </property>
+                                        <property name="sizePolicy">
+                                            <sizepolicy>
+                                                <hsizetype>5</hsizetype>
+                                                <vsizetype>0</vsizetype>
+                                                <horstretch>0</horstretch>
+                                                <verstretch>0</verstretch>
+                                            </sizepolicy>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>m_maxLabelRight</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Maximale Abweichung</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLineEdit">
+                                        <property name="name">
+                                            <cstring>m_rightMax</cstring>
+                                        </property>
+                                        <property name="sizePolicy">
+                                            <sizepolicy>
+                                                <hsizetype>5</hsizetype>
+                                                <vsizetype>0</vsizetype>
+                                                <horstretch>0</horstretch>
+                                                <verstretch>0</verstretch>
+                                            </sizepolicy>
+                                        </property>
+                                    </widget>
+                                </vbox>
+                            </widget>
+                            <widget class="QGroupBox">
+                                <property name="name">
+                                    <cstring>m_leftGroupBox</cstring>
+                                </property>
+                                <property name="enabled">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="title">
+                                    <string>CCD links</string>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>m_averageLabelLeft</cstring>
+                                    </property>
+                                    <property name="geometry">
+                                        <rect>
+                                            <x>11</x>
+                                            <y>20</y>
+                                            <width>320</width>
+                                            <height>16</height>
+                                        </rect>
+                                    </property>
+                                    <property name="text">
+                                        <string>Mittlere Abweichung</string>
+                                    </property>
+                                </widget>
+                                <widget class="QLineEdit">
+                                    <property name="name">
+                                        <cstring>m_leftAverage</cstring>
+                                    </property>
+                                    <property name="geometry">
+                                        <rect>
+                                            <x>11</x>
+                                            <y>40</y>
+                                            <width>320</width>
+                                            <height>21</height>
+                                        </rect>
+                                    </property>
+                                    <property name="sizePolicy">
+                                        <sizepolicy>
+                                            <hsizetype>5</hsizetype>
+                                            <vsizetype>0</vsizetype>
+                                            <horstretch>0</horstretch>
+                                            <verstretch>0</verstretch>
+                                        </sizepolicy>
+                                    </property>
+                                    <property name="frameShadow">
+                                        <enum>Sunken</enum>
+                                    </property>
+                                </widget>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>m_maxLabelLeft</cstring>
+                                    </property>
+                                    <property name="geometry">
+                                        <rect>
+                                            <x>11</x>
+                                            <y>67</y>
+                                            <width>320</width>
+                                            <height>16</height>
+                                        </rect>
+                                    </property>
+                                    <property name="text">
+                                        <string>Maximale Abweichung</string>
+                                    </property>
+                                </widget>
+                                <widget class="QLineEdit">
+                                    <property name="name">
+                                        <cstring>m_leftMax</cstring>
+                                    </property>
+                                    <property name="geometry">
+                                        <rect>
+                                            <x>11</x>
+                                            <y>87</y>
+                                            <width>320</width>
+                                            <height>21</height>
+                                        </rect>
+                                    </property>
+                                    <property name="sizePolicy">
+                                        <sizepolicy>
+                                            <hsizetype>5</hsizetype>
+                                            <vsizetype>0</vsizetype>
+                                            <horstretch>0</horstretch>
+                                            <verstretch>0</verstretch>
+                                        </sizepolicy>
+                                    </property>
+                                </widget>
+                            </widget>
+                        </vbox>
+                    </widget>
+                </hbox>
+            </widget>
+        </vbox>
+    </widget>
+</widget>
+<customwidgets>
+    <customwidget>
+        <class>Plane2DView</class>
+        <header location="local">Plane2DView.h</header>
+        <sizehint>
+            <width>-1</width>
+            <height>-1</height>
+        </sizehint>
+        <container>0</container>
+        <sizepolicy>
+            <hordata>3</hordata>
+            <verdata>3</verdata>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+        <pixmap>image0</pixmap>
+    </customwidget>
+</customwidgets>
+<images>
+    <image name="image0">
+        <data format="PNG" length="1002">89504e470d0a1a0a0000000d4948445200000016000000160806000000c4b46c3b000003b149444154789cad945f4c5b551cc73fe7dc4b7b4bcba0762d45c43114323599ee6192609c51d883892ce083f1718b3ebb185f8dc91e972cf39d2d2a2f1af664b6f1e0fe3863a0718969700eb0c52142da0242a1bd6d696f7bcff101585203ceb8fd9ece39f99dcff9fe7edf939f88c562ec465f5f9fe609442c161362173c3e3eae7b7a7ac8e7f36432196cdbfe4f907c3e4f2291201e8fe338cec3737357e9e8e828aded1e229d650e1f2d51754b082110124c13a4dc5ea341eb9dc284c0558a853f3ce8cb0677ef500fde7d39d2596679e326597b8e9abb85d7a770ab16ab6983ec5a05b487a70e36f0f4e10afe408d6a558310980108478dba4a1e8233990c5d474b64ed39aa3a8fe5f3317fbf81dbd70bccfeb205947632fd74f6589c1c6ea2f70d03a58ba0c1f2c9bdc1b66de3b8256a6e11cbe7e3ee1d181b590124fe2693aeee08d223c82c3a2c24b7b874bec8f26288774f7bd054504aef0dde6e99c0eb83f9fb266323cb80a27fb0958141836044605a2ee5523393371cc646fee2da37195aa35d0c0c5b4859ac03d7e91712dcaac5adab3650a3ff9d08ef7dd8404bb48869e5d958b5b87dadc4c9a1464e9f0d0326df7ebd86bd2e310cb1bf62d384d59441f2d70a070e1c60e09489929b988681bdd9cc97170bcc4c65595f71f8e0e3301337fc24a7732467831875a47f289652b0be5e4151e6d07316c1b0c0340d8ab92023e76d66a6b2840e36d2fb7a13fee632475e6edc367ea98a90fb98b7dd6310ca0328a44761582e1bab41befabcc0ec940d28bc5e93b68e064cab84e1d9beaeb48934eac1f53b01c1b000fca496aa54b61a99fcde61662a4b4b4b23d1680be9d426173e4df3602a48ea411989a4fd590f52a8fd156b05ed9d350e3defe3cfdf4b4c7ce770ea7d3fb9f520afbe1620daeee5c26735d20b9b9cfb6811a754a439e4e5c5639a4caa1e5caf586bfc0197b78702005cb9b4cae4cd3267ce8638fe964bd72b393e39d74928d242617303a756a37f284447770dcdbffc6384a05a85de1306e9a52057c7527c7131c3c42d3f475eb2303c82d4fc3276d6811db37efeb148723082d9b08f79f97c1e5729109a9a28307cc622d2d6cdf52b2b24efe548dedb00142009862cfa879ee1a71f6cec928353511472fbf4389148b0b0e0c108081412458dfe21c9f11351e67e7358595468246d1d1e5e38a6e9e851bc39d84ab502a669331dafec0d8ec7e3e8cb06e1a881d727d1ae40180a434a8c9db129a54126ad48a7358c2b4c5352c8c374bcccdab2bb37d8719cba79fab8211f9df218e0582c261e95f8bfc04f1a1e8bc5c4dfe0a19017a725d8c60000000049454e44ae426082</data>
+    </image>
+</images>
+<connections>
+    <connection>
+        <sender>m_use7CheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>m_lcd7</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>m_use6CheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>m_lcd6</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>m_use5CheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>m_lcd5</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>m_use4CheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>m_lcd4</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>m_use3CheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>m_lcd3</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>m_use2CheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>m_lcd2</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>m_use1CheckBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>m_lcd1</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>m_radio1</tabstop>
+    <tabstop>m_radio3</tabstop>
+    <tabstop>m_radio4</tabstop>
+    <tabstop>m_radio5</tabstop>
+    <tabstop>m_radio6</tabstop>
+    <tabstop>m_radio7</tabstop>
+    <tabstop>m_use1CheckBox</tabstop>
+    <tabstop>m_use2CheckBox</tabstop>
+    <tabstop>m_use3CheckBox</tabstop>
+    <tabstop>m_use4CheckBox</tabstop>
+    <tabstop>m_use5CheckBox</tabstop>
+    <tabstop>m_use6CheckBox</tabstop>
+    <tabstop>m_use7CheckBox</tabstop>
+    <tabstop>m_precalibCheckBox</tabstop>
+    <tabstop>m_leftMax</tabstop>
+    <tabstop>m_leftAverage</tabstop>
+    <tabstop>m_rightAverage</tabstop>
+    <tabstop>m_rightMax</tabstop>
+</tabstops>
+<layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>plane2dview.h</includehint>
+</includehints>
+</UI>

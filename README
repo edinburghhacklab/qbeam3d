@@ -1,0 +1,5 @@
+To compile and link qbeam3d you will need the following additional packages:
+
+Qt 3.x (www.trolltech.com)
+OpenMesh 1.x (www.openmesh.org)
+
