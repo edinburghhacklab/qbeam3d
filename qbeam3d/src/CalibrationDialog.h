@@ -49,7 +49,7 @@ public:
   ~CalibrationDialog();
   /*$PUBLIC_FUNCTIONS$*/
 
-	virtual void CalibrationDialog::showPage( QWidget* page );
+	virtual void showPage( QWidget* page );
 
 	void initIntroduction();
 	void initPrecalibration();

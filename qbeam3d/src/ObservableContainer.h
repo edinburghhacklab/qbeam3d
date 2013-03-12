@@ -63,7 +63,7 @@ public:
 	list& operator=(const list& ob ) { _list = ob._list; updateObservers(); return *this; }
 	
 	template<class In>
-	  void assign(In b, In e ) { _list.assign(b,e,a); }
+	  void assign(In b, In e ) { _list.assign(b,e); }
 	void assign( size_type n, const T& val ) { _list.assign( n, val ); updateObservers(); }
 
 	bool empty() const { return _list.empty(); }
@@ -232,10 +232,10 @@ public:
 
 	~vector() {}
 
-	vector& operator=(const vector& obj) { _vector = ob._vector; }
+	vector& operator=(const vector& obj) { _vector = obj._vector; }
 
 	template<class In>
-	  void assign(In b, In e ) { _vector.assign(b,e,a); }
+	  void assign(In b, In e ) { _vector.assign(b,e); }
 	void assign( size_type n, const T& val ) { _vector.assign( n, val ); }
 
 	bool empty() const { return _vector.empty(); }
@@ -284,8 +284,8 @@ public:
 
 	void remove( const T& val ) { _vector.remove( val ); }
 
-	void resize(size_type n, T val=T()) { _vector.resize(m,val); }
-	void reserve(size_type n, T val=T()) { _vector.reserve(m,val); }
+	void resize(size_type n, T val=T()) { _vector.resize(n,val); }
+	void reserve(size_type n, T val=T()) { _vector.reserve(n,val); }
 
 	// later, not needed now
 	 // splice x3

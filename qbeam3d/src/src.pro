@@ -90,16 +90,14 @@ CONFIG += debug \
           thread \
           stl \
           rtti 
-DESTDIR = /home/mhrab/Entwicklung/qbeam3d/src/ 
+DESTDIR = 
 TARGET = qbeam3d 
 DEFINES = _DEBUG 
 QMAKE_CXXFLAGS_DEBUG += -O0 
 QMAKE_CXXFLAGS_RELEASE += -O2 
-QMAKE_LFLAGS_DEBUG = -L/client/lib \
-                     -lOpenMesh_Core 
-QMAKE_LFLAGS_RELEASE = -L/client/lib \
-                       -lOpenMesh_Core 
-INCLUDEPATH = /client/include 
+QMAKE_LFLAGS_DEBUG = -lOpenMesh_Core 
+QMAKE_LFLAGS_RELEASE = -lOpenMesh_Core 
+INCLUDEPATH = 
 LIBS += -lOpenMesh_Core \
         -lglut 
 target.path = ./src 

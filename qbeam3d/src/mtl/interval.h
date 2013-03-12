@@ -26,6 +26,7 @@
 
 #include <iostream>
 #include <cmath>
+#include <limits>
 
 namespace mtl {
 
