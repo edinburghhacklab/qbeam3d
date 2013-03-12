@@ -69,7 +69,7 @@ void MeshView::drawMesh( DRAW_MODE d )
 					{
 						if( prepareColor( color, m_meshPtr->color(vIt) ) )
 							glColor3fv(color);
-						glVertex3dv(m_meshPtr->point(vIt));
+						glVertex3dv(m_meshPtr->point(vIt).data());
 					}
 					glEnd();
 					break;
@@ -81,15 +81,15 @@ void MeshView::drawMesh( DRAW_MODE d )
 						fvIt = m_meshPtr->cfv_iter(fIt.handle());
 						if( prepareColor( color, m_meshPtr->color(fvIt) ) )
 							glColor3fv(color);
-						glVertex3dv(m_meshPtr->point(fvIt));
+						glVertex3dv(m_meshPtr->point(fvIt).data());
 						++fvIt;
 						if( prepareColor( color, m_meshPtr->color(fvIt) ) )
 							glColor3fv(color);
-						glVertex3dv(m_meshPtr->point(fvIt));
+						glVertex3dv(m_meshPtr->point(fvIt).data());
 						++fvIt;
 						if( prepareColor( color, m_meshPtr->color(fvIt) ) )
 							glColor3fv(color);
-						glVertex3dv(m_meshPtr->point(fvIt));
+						glVertex3dv(m_meshPtr->point(fvIt).data());
 						glEnd();
 					}
 					break;
@@ -99,19 +99,19 @@ void MeshView::drawMesh( DRAW_MODE d )
 					glColor3fv(color);
 					for (; fIt!=fEnd; ++fIt)
 					{
-						glNormal3fv( m_meshPtr->normal( fIt.handle() ) );
+						glNormal3fv( m_meshPtr->normal( fIt.handle() ).data() );
 						fvIt = m_meshPtr->cfv_iter(fIt.handle());
 						if( prepareColor( color, m_meshPtr->color(fvIt) ) )
 							glColor3fv(color);
-						glVertex3dv(m_meshPtr->point(fvIt));
+						glVertex3dv(m_meshPtr->point(fvIt).data());
 						++fvIt;
 						if( prepareColor( color, m_meshPtr->color(fvIt) ) )
 							glColor3fv(color);
-						glVertex3dv(m_meshPtr->point(fvIt));
+						glVertex3dv(m_meshPtr->point(fvIt).data());
 						++fvIt;
 						if( prepareColor( color, m_meshPtr->color(fvIt) ) )
 							glColor3fv(color);
-						glVertex3dv(m_meshPtr->point(fvIt));
+						glVertex3dv(m_meshPtr->point(fvIt).data());
 					}
 					glEnd();
 					break;
@@ -121,20 +121,20 @@ void MeshView::drawMesh( DRAW_MODE d )
 					for (; fIt!=fEnd; ++fIt)
 					{
 						fvIt = m_meshPtr->cfv_iter(fIt.handle());
-						glNormal3fv(m_meshPtr->normal(fvIt.handle()) );
+						glNormal3fv(m_meshPtr->normal(fvIt.handle()).data() );
 						if( prepareColor( color, m_meshPtr->color(fvIt) ) )
 							glColor3fv(color);
-						glVertex3dv(m_meshPtr->point(fvIt));
+						glVertex3dv(m_meshPtr->point(fvIt).data());
 						++fvIt;
-						glNormal3fv(m_meshPtr->normal(fvIt.handle()));
+						glNormal3fv(m_meshPtr->normal(fvIt.handle()).data());
 						if( prepareColor( color, m_meshPtr->color(fvIt) ) )
 							glColor3fv(color);
-						glVertex3dv(m_meshPtr->point(fvIt));
+						glVertex3dv(m_meshPtr->point(fvIt).data());
 						++fvIt;
-						glNormal3fv(m_meshPtr->normal(fvIt.handle()));
+						glNormal3fv(m_meshPtr->normal(fvIt.handle()).data());
 						if( prepareColor( color, m_meshPtr->color(fvIt) ) )
 							glColor3fv(color);
-						glVertex3dv(m_meshPtr->point(fvIt));
+						glVertex3dv(m_meshPtr->point(fvIt).data());
 					}
 					glEnd();
 					break;
